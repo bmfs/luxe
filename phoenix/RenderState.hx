@@ -119,7 +119,7 @@ class RenderState {
     public function useProgram( program:GLProgram ) {
         if(_used_program != program) {
             _used_program = program;
-            GL.useProgram( program );
+            GL.useProgram( program == null ? null : program  );
         }
     } //useProgram
 
@@ -135,7 +135,7 @@ class RenderState {
     public function bindTexture2D( tex:GLTexture ) {
         if(_bound_texture_2D != tex) {
             _bound_texture_2D = tex;
-            GL.bindTexture(GL.TEXTURE_2D, tex);
+            GL.bindTexture(GL.TEXTURE_2D, tex == null ? null : tex );
         }
     }
 

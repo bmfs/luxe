@@ -259,7 +259,6 @@ class Shader extends Resource {
             add_error( "\t\t"+ shader_log );
 
             GL.deleteShader(_shader);
-            _shader = null;
 
             return null;
 
