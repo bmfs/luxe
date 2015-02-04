@@ -94,7 +94,7 @@ class Batcher {
     public var static_normal_floats  : Int = 0;
 
         //the current number of active buffers in the ring
-    public var buffer_count : Int = 3;
+    public var buffer_count : Int = 1;
 
         //the index we are on
     public var buffer_index : Int = 0;
@@ -859,15 +859,15 @@ class Batcher {
 
         GL.bindBuffer(GL.ARRAY_BUFFER, vertexBuffers[buffer_index] );
         GL.vertexAttribPointer( 0, 4, GL.FLOAT, false, 0, 0 );
-        GL.bufferSubData( GL.ARRAY_BUFFER , 0, Float32Array.fromBuffer(vertlist.buffer, 0, vert_floats) );
+        GL.bufferSubData( GL.ARRAY_BUFFER , 0, new Float32Array(vertlist.buffer, 0, vert_floats) );
 
         GL.bindBuffer(GL.ARRAY_BUFFER, tcoordBuffers[buffer_index] );
         GL.vertexAttribPointer( 1, 4, GL.FLOAT, false, 0, 0 );
-        GL.bufferSubData( GL.ARRAY_BUFFER , 0, Float32Array.fromBuffer(tcoordlist.buffer, 0, tcoord_floats) );
+        GL.bufferSubData( GL.ARRAY_BUFFER , 0, new Float32Array(tcoordlist.buffer, 0, tcoord_floats) );
 
         GL.bindBuffer(GL.ARRAY_BUFFER, vcolorBuffers[buffer_index] );
         GL.vertexAttribPointer( 2, 4, GL.FLOAT, false, 0, 0 );
-        GL.bufferSubData( GL.ARRAY_BUFFER , 0, Float32Array.fromBuffer(colorlist.buffer, 0, color_floats) );
+        GL.bufferSubData( GL.ARRAY_BUFFER , 0, new Float32Array(colorlist.buffer, 0, color_floats) );
 
         // GL.bindBuffer(GL.ARRAY_BUFFER, normalBuffers[buffer_index] );
         // GL.vertexAttribPointer( 3, 4, GL.FLOAT, false, 0, 0 );

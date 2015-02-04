@@ -69,7 +69,7 @@ class Matrix {
             n41, n42, n43, n44
         );
 
-        _float32array = snow.io.typedarray.Float32Array.fromArray( elements );
+        _float32array = new snow.io.typedarray.Float32Array( elements );
 
     }
 
@@ -142,7 +142,7 @@ class Matrix {
 
     public inline function float32array() : snow.io.typedarray.Float32Array {
 
-        return snow.io.typedarray.Float32Array.fromArray( elements );
+        return new snow.io.typedarray.Float32Array( elements );
 
     } //float32array
 
